@@ -1,4 +1,4 @@
-<div class="chat-head">
+<div class="chat-header">
   <div class="left-header">
     <div class="header-title">
       hogefuga
@@ -11,38 +11,11 @@
   </div>
 </div>
 
-<div class="chat-main">
-  <div class="message-contents">
-    <div class="message-content">
-      <div class="message-top">
-        <div class="message-name">
-          Tom
-        </div>
-        <div class="message-time">
-          2020/3/31(Wed) 12:43:30
-        </div>
-      </div>
-      <div class="message-title">
-      おはよう
-      </div>
-    </div>
-        <div class="message-content">
-      <div class="message-top">
-        <div class="message-name">
-          Sim
-        </div>
-        <div class="message-time">
-          2021/4/10(Sat) 09:14:27
-        </div>
-      </div>
-      <div class="message-title">
-      こんにちは
-      </div>
-    </div>
-  </div>
+<div class="messages">
+  <%= render partial: 'message', collection: @messages %>
 </div>
 
-<div class="chat-hoot">
+<div class="form">
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
